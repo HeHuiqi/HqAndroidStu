@@ -1,0 +1,89 @@
+plugins {
+//    com.android.application 表示这是一个应用程序模块
+//    com.android.library 表示这是一个库模块
+//    应用程序模块是可以直 接运行的，库模块只能作为代码库依附于别的应用程序模块来运行
+    id 'com.android.application'
+//    表示要使用kotlin来开发安卓项目
+    id 'org.jetbrains.kotlin.android'
+    //已废弃
+//    id "kotlin-android-extensions"
+
+    //使用一下替代
+    id "kotlin-parcelize"
+}
+
+android {
+    namespace 'com.example.hqandroidstu'
+    compileSdk 34
+
+    defaultConfig {
+//        应用包id
+        applicationId "com.example.hqandroidstu"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    //编译配置
+    buildFeatures {
+
+        /*
+
+        // https://developer.android.com/topic/libraries/view-binding/migration?hl=zh-cn
+        // https://developer.android.com/topic/libraries/view-binding?hl=zh-cn#activities
+
+        开启视图绑定将会为布局根据其名称生成一个bind类名，如布局 activity_main.xml 将会
+        为其生成一个 ActivityMainBinding 的类
+        //使用方法如下：
+
+        private lateinit var rootBind: ActivityMainBinding
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            //初始化bind
+            rootBind = ActivityMainBinding.inflate(layoutInflater)
+            //设置root view
+            setContentView(rootBind.root)
+            //通过视图绑定类获取其子控件，并设置点击事件监听
+            // goBtn 是布局中设置子视图的id
+            rootBind.goBtn.setOnClickListener {
+                //....
+            }
+        }
+   */
+        viewBinding true
+    }
+
+    buildTypes {
+        release {
+            // 用于指定是否对项目的代码进行混淆
+            minifyEnabled false
+            // 混淆规则文件
+            // 第一个proguard-android-optimize.txt是在 <Android SDK>/tools/proguard目录下的，里面是所有项目通用的混淆规则
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+//    本地依赖，表示将libs目录下所有.jar后缀的文件都添加到项目的构建路径中
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    远程依赖，首先检查一下本 地是否已经有这个库的缓存，如果没有的话则会自动联网下载，然后再添加到项目的构建路径 中
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+//    库依赖，比如有一个库模块的名字叫helper，则使用如下方式添加
+//    implementation project(':helper')
+}

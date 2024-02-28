@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <!-- 这是无标题栏的 Theme.Material3.DayNight.NoActionBar -->
+    <!-- 这是有标题栏的 Theme.Material3.DayNight -->
+    <!-- 这是有标题栏的 Theme.AppCompat.DayNight -->
+    <!-- 这是有标题栏的 Theme.AppCompat.Light -->
+    <style name="Base.Theme.HqAndroidStu" parent="Theme.Material3.DayNight">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.HqAndroidStu" parent="Base.Theme.HqAndroidStu" />
+
+    <style name="Theme.HqAndroidStu.NOActionBar" parent="Theme.Material3.DayNight.NoActionBar" />
+
+</resources>
