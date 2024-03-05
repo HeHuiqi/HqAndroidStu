@@ -1,5 +1,7 @@
 package com.example.hqandroidstu
 
+import kotlin.reflect.KProperty
+
 /*
 val(value的简写)用来声明一个不可变的变量，这种变量在初始赋值之后就再也不能重新赋 值，对应Java中的final变量。
 var(variable的简写)用来声明一个可变的变量，这种变量在初始赋值之后仍然可以再被重新 赋值，对应Java中的非final变量。
@@ -445,8 +447,72 @@ fun customExtFun(){
     }
     println("res=$result1")
 }
-fun main(){
+//泛型方法,这样任何类都可以调用这个build2方法了
+fun <T> T.build2(block:T.() -> Unit):T {
+    block()
+    return this
+}
 
+fun fanxingStu(){
+    val list = listOf<String>("Apple","Banana","Orange","Pear","Grape","Watermelon")
+
+    val result1 = StringBuilder().build2 {
+        append("开始吃水果")
+        for (fruit in list) {
+            append(fruit).append("\n")
+        }
+        append("水果都吃完了")
+    }
+    println("res=$result1")
+}
+
+// Kotlin中委托使用的关键字是by，我们只需要在接口声明的后面使用by关键字，再接上受委托 的辅助对象
+
+class MySet<T>(private val helper:HashSet<T>):Set<T> by helper {
+
+}
+
+//属性委托
+class HqClass {
+    //p属性的set和get实现交给了HqDelegate类实现
+    // 现在当我们给HqClass的p属性赋值时，就会调用 Delegate类的setValue()方法，当获取HqClass中p属性的值时，就会调用Delegate类的 getValue()方法
+    val p by HqDelegate()
+}
+class HqDelegate {
+    // 在Delegate类中我们必须实现getValue()和setValue()这 两个方法，并且都要使用operator关键字进行声明。
+    var propValue:Any? = null
+
+    //:第一个参数用于声明该Delegate类的委托功能可以在什么 类中使用，这里写成HqClass表示仅可在HqClass类中使用;第二个参数KProperty<*>是 Kotlin中的一个属性操作类，可用于获取各种属性相关的值
+    operator fun getValue(hqClass: HqClass,prop:KProperty<*>):Any? {
+        return propValue
+    }
+    operator fun setValue(hqClass: HqClass,prop: KProperty<*>,value: Any?) {
+        propValue = value
+    }
+}
+
+//infix 函数
+//infix关键字之后，beginsWith()函数就变成了一个infix函数
+//首先，infix函数是 不能定义成顶层函数的，它必须是某个类的成员函数，可以使用扩展函数的方式将它定义到某 个类当中;其次，infix函数必须接收且只能接收一个参数，至于参数类型是没有限制的
+infix fun String.beginsWith(prefix:String) = startsWith(prefix)
+
+infix fun <T> Collection<T>.has(element: T) = contains(element)
+infix fun <A, B> A.with(that: B): Pair<A, B> = Pair(this, that)
+
+fun infixStu(){
+    // 一种特殊的语法糖格式调用beginsWith()函数,infix函数的调用
+    val res = "Hello World!!" beginsWith "Hello"
+    println(res)
+    val list = listOf("Apple", "Banana", "Orange", "Pear", "Grape")
+    if (list has "Apple") {
+        println("有苹果")
+    }
+    val map = mapOf("Apple" with 1, "Banana" with 2, "Orange" with 3, "Pear" with 4,
+        "Grape" with 5)
+    println(map)
+}
+
+fun main(){
 
 //    oop()
 //    collectStu()
@@ -457,6 +523,8 @@ fun main(){
 //    extFunStu()
 //    operatorStu()
 //    customLambdaStu2()
-    customExtFun()
+//    customExtFun()
+//    fanxingStu()
+    infixStu()
 
 }

@@ -6,9 +6,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import com.example.hqandroidstu.data.HqDBActivity
+import com.example.hqandroidstu.data.HqDataSaveActivity
 import com.example.hqandroidstu.databinding.ActivityMainBinding
 import com.example.hqandroidstu.databinding.FirstLayoutBinding
+import com.example.hqandroidstu.datashare.HqDataShareActivity
+import com.example.hqandroidstu.datashare.HqRuntimePermissionActivity
+import com.example.hqandroidstu.datashare.HqVisitCustomContentProviderActivity
+import com.example.hqandroidstu.media.HqCameraPhotoActivity
+import com.example.hqandroidstu.media.HqNotifyMainActivity
+import com.example.hqandroidstu.media.HqPlayAudioActivity
+import com.example.hqandroidstu.media.HqPlayVideoActivity
 import com.example.hqandroidstu.service.HqBroadcastActivityStu
+import com.example.hqandroidstu.service.HqMultiThreadStuActivity
+import com.example.hqandroidstu.service.HqServiceStuActivity
 import com.example.hqandroidstu.uibase.HqCustomUIActivity
 import com.example.hqandroidstu.uibase.HqFragmentStuActivity
 import com.example.hqandroidstu.uibase.HqFragmentStuActivity2
@@ -46,8 +57,18 @@ class MainActivity : AppCompatActivity() {
 //            HqFragmentStuActivity.actionStart(this)
 //            HqFragmentStuActivity2.actionStart(this)
 //            HqNewsMainActivity.actionStart(this)
-            HqBroadcastActivityStu.actionStart(this)
-
+//            HqBroadcastActivityStu.actionStart(this)
+//            HqDataSaveActivity.actionStart(this)
+//            HqDBActivity.actionStart(this)
+//            HqRuntimePermissionActivity.actionStart(this)
+//            HqDataShareActivity.actionStart(this)
+//            HqVisitCustomContentProviderActivity.actionStart(this)
+//            HqNotifyMainActivity.actionStart(this)
+//            HqCameraPhotoActivity.actionStart(this)
+//            HqPlayAudioActivity.actionStart(this)
+//            HqPlayVideoActivity.actionStart(this)
+//            HqMultiThreadStuActivity.actionStart(this)
+            HqServiceStuActivity.actionStart(this)
         }
     }
     private fun pushNewActivity(context: Context, cls: Class<HqFirstActivity>){

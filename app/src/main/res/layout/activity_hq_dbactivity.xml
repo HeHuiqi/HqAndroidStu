@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".data.HqDBActivity">
+    <Button
+        android:id="@+id/hqCreateDatabaseBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="创建数据库"/>
+    <Button
+        android:id="@+id/hqInsertBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="插入数据"/>
+    <Button
+        android:id="@+id/hqUpdateBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="更新数据"/>
+    <Button
+        android:id="@+id/hqDeleteBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="删除数据"/>
+    <Button
+        android:id="@+id/hqQueryBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询数据"/>
+    <Button
+        android:id="@+id/hqTransitionBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="事务操作，插入和更新"/>
+
+    <TextView
+        android:id="@+id/hqDataTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        />
+
+
+</LinearLayout>
