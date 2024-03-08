@@ -13,10 +13,16 @@ import com.example.hqandroidstu.databinding.FirstLayoutBinding
 import com.example.hqandroidstu.datashare.HqDataShareActivity
 import com.example.hqandroidstu.datashare.HqRuntimePermissionActivity
 import com.example.hqandroidstu.datashare.HqVisitCustomContentProviderActivity
+import com.example.hqandroidstu.material.HqDrawerActivity
+import com.example.hqandroidstu.material.HqMaterialActivity
 import com.example.hqandroidstu.media.HqCameraPhotoActivity
 import com.example.hqandroidstu.media.HqNotifyMainActivity
 import com.example.hqandroidstu.media.HqPlayAudioActivity
 import com.example.hqandroidstu.media.HqPlayVideoActivity
+import com.example.hqandroidstu.network.HqDataParseActivity
+import com.example.hqandroidstu.network.HqHttpRequestActivity
+import com.example.hqandroidstu.network.HqRetrofitStuActivity
+import com.example.hqandroidstu.network.HqWebViewStuActivity
 import com.example.hqandroidstu.service.HqBroadcastActivityStu
 import com.example.hqandroidstu.service.HqMultiThreadStuActivity
 import com.example.hqandroidstu.service.HqServiceStuActivity
@@ -68,7 +74,13 @@ class MainActivity : AppCompatActivity() {
 //            HqPlayAudioActivity.actionStart(this)
 //            HqPlayVideoActivity.actionStart(this)
 //            HqMultiThreadStuActivity.actionStart(this)
-            HqServiceStuActivity.actionStart(this)
+//            HqServiceStuActivity.actionStart(this)
+//            HqWebViewStuActivity.actionStart(this)
+//            HqHttpRequestActivity.actionStart(this)
+//            HqDataParseActivity.actionStart(this)
+//            HqRetrofitStuActivity.actionStart(this)
+//            HqMaterialActivity.actionStart(this)
+            HqDrawerActivity.actionStart(this)
         }
     }
     private fun pushNewActivity(context: Context, cls: Class<HqFirstActivity>){

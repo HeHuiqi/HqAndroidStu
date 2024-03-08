@@ -4,9 +4,11 @@
     <!-- 这是有标题栏的 Theme.Material3.DayNight -->
     <!-- 这是有标题栏的 Theme.AppCompat.DayNight -->
     <!-- 这是有标题栏的 Theme.AppCompat.Light -->
-    <style name="Base.Theme.HqAndroidStu" parent="Theme.Material3.DayNight">
+    <style name="Base.Theme.HqAndroidStu" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="Theme.HqAndroidStu" parent="Base.Theme.HqAndroidStu" />

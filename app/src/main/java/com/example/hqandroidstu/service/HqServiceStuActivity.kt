@@ -10,7 +10,6 @@ import android.os.IBinder
 import com.example.hqandroidstu.R
 import com.example.hqandroidstu.databinding.ActivityHqServiceStuBinding
 import com.example.hqandroidstu.hqStartActivity
-import com.example.hqandroidstu.startActivity
 
 class HqServiceStuActivity : AppCompatActivity() {
     companion object {

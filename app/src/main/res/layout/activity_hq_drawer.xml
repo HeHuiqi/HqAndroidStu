@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".material.HqDrawerActivity"
+    android:id="@+id/hqDrawerLayout">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<!--  AppBarLayout 包裹Toolbar 并设置 RecyclerView的 app:layout_behavior 避免
+RecyclerView遮挡Toolbar
+
+app:layout_scrollFlags属性，并将这个属性的值指定成了 scroll|enterAlways|snap。其中，scroll表示当RecyclerView向上滚动的时候， Toolbar会跟着一起向上滚动并实现隐藏;enterAlways表示当RecyclerView向下滚动的时 候，Toolbar会跟着一起向下滚动并重新显示;snap表示当Toolbar还没有完全隐藏或显示的时 候，会根据当前滚动的距离，自动选择是隐藏还是显示
+    -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_scrollFlags="scroll|enterAlways|snap"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/hqSwipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hqRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_done"
+            app:elevation="8dp"
+            android:importantForAccessibility="no" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+<!--    抽屉视图的页面
+layout_gravity这个属性是必须指定的，因为我们 需要告诉DrawerLayout滑动菜单是在屏幕的左边还是右边，指定left表示滑动菜单在左边，指 定right表示滑动菜单在右边。这里我指定了start，表示会根据系统语言进行判断，如果系统语 言是从左往右的，比如英语、汉语，滑动菜单就在左边，如果系统语言是从右往左的，比如阿 拉伯语，滑动菜单就在右边
+layout_gravity的属性设置必须和代码调用保持一致如 hqDrawerLayout.openDrawer(GravityCompat.START)
+-->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/nav_menu"
+        app:headerLayout="@layout/nav_header"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

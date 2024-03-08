@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".network.HqDataParseActivity">
+    <Button
+        android:id="@+id/hqXmlParseBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="XML数据解析"/>
+    <Button
+        android:id="@+id/hqJsonParseBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="JSON数据解析"/>
+    <TextView
+        android:id="@+id/hqParesContentTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

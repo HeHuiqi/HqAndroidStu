@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<!-- app:showAsAction 指定显示方式    -->
+    <item
+        android:id="@+id/backup"
+        android:icon="@drawable/apple_pic"
+        android:title="Backup"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/banana_pic"
+        android:title="Delete"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/pear_pic"
+        android:title="Settings"
+        app:showAsAction="always" />
+</menu>
