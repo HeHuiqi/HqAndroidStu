@@ -13,6 +13,10 @@ import com.example.hqandroidstu.databinding.FirstLayoutBinding
 import com.example.hqandroidstu.datashare.HqDataShareActivity
 import com.example.hqandroidstu.datashare.HqRuntimePermissionActivity
 import com.example.hqandroidstu.datashare.HqVisitCustomContentProviderActivity
+import com.example.hqandroidstu.gaoji.HqGaojiActivity
+import com.example.hqandroidstu.jetpack.HqJetpackStuActivity
+import com.example.hqandroidstu.jetpack.HqRoomStuActivity
+import com.example.hqandroidstu.jetpack.HqWorkManagerStuActivity
 import com.example.hqandroidstu.material.HqDrawerActivity
 import com.example.hqandroidstu.material.HqMaterialActivity
 import com.example.hqandroidstu.media.HqCameraPhotoActivity
@@ -47,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Log.d("MainActivity", "onCreate: execute")
+
         setup()
     }
     private fun setup(){
@@ -80,7 +85,12 @@ class MainActivity : AppCompatActivity() {
 //            HqDataParseActivity.actionStart(this)
 //            HqRetrofitStuActivity.actionStart(this)
 //            HqMaterialActivity.actionStart(this)
-            HqDrawerActivity.actionStart(this)
+//            HqDrawerActivity.actionStart(this)
+//            HqJetpackStuActivity.actionStart(this)
+//            HqRoomStuActivity.actionStart(this)
+//            HqWorkManagerStuActivity.actionStart(this)
+            HqGaojiActivity.actionStart(this)
+
         }
     }
     private fun pushNewActivity(context: Context, cls: Class<HqFirstActivity>){

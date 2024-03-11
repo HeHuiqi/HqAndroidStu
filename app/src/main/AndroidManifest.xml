@@ -23,6 +23,7 @@
         android:protectionLevel="normal" />
 
     <application
+        android:name=".HqApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -33,15 +34,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HqAndroidStu"
         tools:targetApi="31">
-<!--   @style/HqTransparentTheme  自定义主题     -->
+        <activity
+            android:name=".weather.HqWeatherMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".gaoji.HqDataShowActivity"
+            android:exported="false" />
+        <activity
+            android:name=".gaoji.HqGaojiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".jetpack.HqWorkManagerStuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".jetpack.HqRoomStuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".jetpack.HqJetpackStuActivity"
+            android:exported="false" /> <!-- @style/HqTransparentTheme  自定义主题 -->
         <activity
             android:name=".material.HqFruitActivity"
             android:exported="false"
-            android:theme="@style/HqTransparentTheme"/>
+            android:theme="@style/HqTransparentTheme" />
         <activity
             android:name=".material.HqDrawerActivity"
             android:exported="false"
-            android:theme="@style/HqStatusBarTheme"/>
+            android:theme="@style/HqStatusBarTheme" />
         <activity
             android:name=".material.HqMaterialActivity"
             android:exported="false" />

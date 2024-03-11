@@ -1,3 +1,4 @@
+
 plugins {
 //    com.android.application 表示这是一个应用程序模块
 //    com.android.library 表示这是一个库模块
@@ -7,9 +8,11 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     //已废弃
 //    id "kotlin-android-extensions"
+    id 'com.google.devtools.ksp'
 
     //使用一下替代
     id "kotlin-parcelize"
+
 }
 
 android {
@@ -73,6 +76,7 @@ android {
     }
 }
 
+
 dependencies {
 //    本地依赖，表示将libs目录下所有.jar后缀的文件都添加到项目的构建路径中
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -112,6 +116,20 @@ dependencies {
 
     //下拉刷新 https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout?hl=zh-cn
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
+
+    // https://developer.android.com/training/data-storage/room?hl=zh-cn
+    //ORM room
+    implementation "androidx.room:room-runtime:2.6.1"
+    // https://kotlinlang.org/docs/ksp-quickstart.html#edbacca8
+    ksp 'androidx.room:room-compiler:2.6.1'
+
+    implementation("androidx.work:work-runtime:2.9.0")
+
+
+    // 调试工具 https://github.com/didi/DoKit/blob/master/Android/README.md
+
+
 
 
 }
