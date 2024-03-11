@@ -17,6 +17,7 @@ import com.example.hqandroidstu.gaoji.HqGaojiActivity
 import com.example.hqandroidstu.jetpack.HqJetpackStuActivity
 import com.example.hqandroidstu.jetpack.HqRoomStuActivity
 import com.example.hqandroidstu.jetpack.HqWorkManagerStuActivity
+import com.example.hqandroidstu.libs.HqLibsTestActivity
 import com.example.hqandroidstu.material.HqDrawerActivity
 import com.example.hqandroidstu.material.HqMaterialActivity
 import com.example.hqandroidstu.media.HqCameraPhotoActivity
@@ -90,6 +91,7 @@ class MainActivity : AppCompatActivity() {
 //            HqRoomStuActivity.actionStart(this)
 //            HqWorkManagerStuActivity.actionStart(this)
             HqGaojiActivity.actionStart(this)
+            HqLibsTestActivity.actionStart(this)
 
         }
     }

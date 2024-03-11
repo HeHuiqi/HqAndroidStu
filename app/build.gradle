@@ -131,5 +131,7 @@ dependencies {
 
 
 
+    //引用本地模块
+    implementation project(':HqPermissionX')
 
 }

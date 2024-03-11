@@ -35,6 +35,9 @@
         android:theme="@style/Theme.HqAndroidStu"
         tools:targetApi="31">
         <activity
+            android:name=".libs.HqLibsTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".weather.HqWeatherMainActivity"
             android:exported="false" />
         <activity
