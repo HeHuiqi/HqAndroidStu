@@ -88,10 +88,10 @@ class MainActivity : AppCompatActivity() {
 //            HqMaterialActivity.actionStart(this)
 //            HqDrawerActivity.actionStart(this)
 //            HqJetpackStuActivity.actionStart(this)
-//            HqRoomStuActivity.actionStart(this)
+            HqRoomStuActivity.actionStart(this)
 //            HqWorkManagerStuActivity.actionStart(this)
-            HqGaojiActivity.actionStart(this)
-            HqLibsTestActivity.actionStart(this)
+//            HqGaojiActivity.actionStart(this)
+//            HqLibsTestActivity.actionStart(this)
 
         }
     }
