@@ -1,14 +1,29 @@
 package com.example.hqandroidstu
 
+import android.annotation.SuppressLint
 import android.app.Activity
+import java.lang.ref.WeakReference
 
-object HqActivityCollector {
+
+
+
+@SuppressLint("StaticFieldLeak")
+object HqActivityManager {
     private val activitys = ArrayList<Activity>()
+    private var currentActivityWeakRef: WeakReference<Activity>? = null
     fun addActivity(activity: Activity) {
         activitys.add(activity)
     }
     fun removeActivity(activity: Activity) {
         activitys.remove(activity)
+        currentActivityWeakRef = null
+    }
+
+    fun getCurrentActivity():Activity?{
+        return currentActivityWeakRef?.get()
+    }
+    fun setCurrentActivity(activity: Activity) {
+        currentActivityWeakRef = WeakReference<Activity>(activity)
     }
 
     fun finishAll() {

@@ -1,6 +1,5 @@
 package com.example.hqandroidstu
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
@@ -13,7 +12,7 @@ class HqThirdActivity : HqBaseActivity() {
     private fun setup() {
         val btn3:Button = findViewById(R.id.button3)
         btn3.setOnClickListener {
-            HqActivityCollector.finishAll()
+            HqActivityManager.finishAll()
         }
     }
 }

@@ -10,13 +10,13 @@ open class HqBaseActivity : AppCompatActivity() {
         setContentView(R.layout.activity_hq_base)
         Log.d("HqBaseActivity", javaClass.simpleName)
         //初始化时添加
-        HqActivityCollector.addActivity(this)
+        HqActivityManager.addActivity(this)
 
     }
 
     override fun onDestroy() {
         super.onDestroy()
         //销毁时移除
-        HqActivityCollector.removeActivity(this)
+        HqActivityManager.removeActivity(this)
     }
 }
