@@ -13,10 +13,12 @@ import com.example.hqandroidstu.databinding.FirstLayoutBinding
 import com.example.hqandroidstu.datashare.HqDataShareActivity
 import com.example.hqandroidstu.datashare.HqRuntimePermissionActivity
 import com.example.hqandroidstu.datashare.HqVisitCustomContentProviderActivity
+import com.example.hqandroidstu.dialog.HqDialogActivity
 import com.example.hqandroidstu.gaoji.HqGaojiActivity
 import com.example.hqandroidstu.jetpack.HqJetpackStuActivity
 import com.example.hqandroidstu.jetpack.HqRoomStuActivity
 import com.example.hqandroidstu.jetpack.HqWorkManagerStuActivity
+import com.example.hqandroidstu.kotlin.HqKotlinStuActivity
 import com.example.hqandroidstu.libs.HqLibsTestActivity
 import com.example.hqandroidstu.material.HqDrawerActivity
 import com.example.hqandroidstu.material.HqMaterialActivity
@@ -28,10 +30,14 @@ import com.example.hqandroidstu.network.HqDataParseActivity
 import com.example.hqandroidstu.network.HqHttpRequestActivity
 import com.example.hqandroidstu.network.HqRetrofitStuActivity
 import com.example.hqandroidstu.network.HqWebViewStuActivity
+import com.example.hqandroidstu.scan.HqCameraXActivity
+import com.example.hqandroidstu.scan.HqScanCodeActivity
+import com.example.hqandroidstu.scan.HqScanCodeSimpleActivity
 import com.example.hqandroidstu.service.HqBroadcastActivityStu
 import com.example.hqandroidstu.service.HqMultiThreadStuActivity
 import com.example.hqandroidstu.service.HqServiceStuActivity
 import com.example.hqandroidstu.uibase.HqCustomUIActivity
+import com.example.hqandroidstu.uibase.HqCustomViewActivity
 import com.example.hqandroidstu.uibase.HqFragmentStuActivity
 import com.example.hqandroidstu.uibase.HqFragmentStuActivity2
 import com.example.hqandroidstu.uibase.HqLayoutBaseActivity
@@ -40,6 +46,8 @@ import com.example.hqandroidstu.uibase.HqMessageActivity
 import com.example.hqandroidstu.uibase.HqNewsMainActivity
 import com.example.hqandroidstu.uibase.HqRecyclerViewActivity
 import com.example.hqandroidstu.uibase.HqUIBaseActivity
+import com.example.hqandroidstu.uibase.HqUICompetentActivity
+import com.example.hqandroidstu.webview.HqWebViewActivity
 
 /*
 * AppCompatActivity是 AndroidX中提供的一种向下兼容的Activity，
@@ -88,11 +96,18 @@ class MainActivity : AppCompatActivity() {
 //            HqMaterialActivity.actionStart(this)
 //            HqDrawerActivity.actionStart(this)
 //            HqJetpackStuActivity.actionStart(this)
-            HqRoomStuActivity.actionStart(this)
+//            HqRoomStuActivity.actionStart(this)
 //            HqWorkManagerStuActivity.actionStart(this)
 //            HqGaojiActivity.actionStart(this)
 //            HqLibsTestActivity.actionStart(this)
-
+//            HqUICompetentActivity.actionStart(this)
+//            HqKotlinStuActivity.actionStart(this)
+//            HqCameraXActivity.actionStart(this)
+//            HqScanCodeSimpleActivity.actionStart(this)
+//            HqScanCodeActivity.actionStart(this)
+//            HqDialogActivity.actionStart(this)
+//            HqCustomViewActivity.actionStart(this)
+            HqWebViewActivity.actionStart(this)
         }
     }
     private fun pushNewActivity(context: Context, cls: Class<HqFirstActivity>){

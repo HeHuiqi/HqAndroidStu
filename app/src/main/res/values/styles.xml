@@ -4,12 +4,14 @@
         <item name="android:background">@color/gray_400</item>
         <item name="exampleColor">@color/light_blue_400</item>
     </style>
+
     <style name="HqStatusBarTheme" parent="Base.Theme.HqAndroidStu">
         <!--      设置状态栏的背景为透明的  -->
         <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
+
     <style name="HqTransparentTheme" parent="Base.Theme.HqAndroidStu">
-<!--      设置状态栏的背景为透明的  -->
+        <!--      设置状态栏的背景为透明的  -->
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 </resources>

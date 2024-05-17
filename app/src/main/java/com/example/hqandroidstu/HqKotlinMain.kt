@@ -1,5 +1,22 @@
 package com.example.hqandroidstu
 
+import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.count
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onCompletion
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.launch
 import kotlin.reflect.KProperty
 
 /*
@@ -512,7 +529,10 @@ fun infixStu(){
     println(map)
 }
 
-fun main(){
+
+
+@OptIn(DelicateCoroutinesApi::class)
+suspend fun main(){
 
 //    oop()
 //    collectStu()
@@ -525,6 +545,7 @@ fun main(){
 //    customLambdaStu2()
 //    customExtFun()
 //    fanxingStu()
-    infixStu()
+//    infixStu()
+
 
 }
