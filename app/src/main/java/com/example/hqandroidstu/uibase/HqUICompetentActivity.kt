@@ -3,7 +3,6 @@ package com.example.hqandroidstu.uibase
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
-import android.graphics.Rect
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
@@ -19,8 +18,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hqandroidstu.R
 import com.example.hqandroidstu.databinding.ActivityHqUicompotentBinding
-import com.example.hqandroidstu.showToast
-import com.example.hqandroidstu.with
+import com.example.hqandroidstu.utils.showToast
 
 
 enum class UICompetent(name: String) {

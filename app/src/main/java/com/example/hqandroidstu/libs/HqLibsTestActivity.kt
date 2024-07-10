@@ -5,9 +5,8 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.hqandroidstu.R
 import com.example.hqandroidstu.databinding.ActivityHqLibsTestBinding
-import com.example.hqandroidstu.showToast
+import com.example.hqandroidstu.utils.showToast
 import com.hhq.hqpermissionx.HqPermissionX
 
 class HqLibsTestActivity : AppCompatActivity() {

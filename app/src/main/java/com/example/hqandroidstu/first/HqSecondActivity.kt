@@ -1,9 +1,9 @@
-package com.example.hqandroidstu
+package com.example.hqandroidstu.first
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.hqandroidstu.HqBaseActivity
 import com.example.hqandroidstu.databinding.ActivityHqSecondBinding
 
 class HqSecondActivity : HqBaseActivity() {
@@ -21,7 +21,7 @@ class HqSecondActivity : HqBaseActivity() {
 //            context.startActivity(intent)
 
             //通过apply函数来简化参数传递
-            val intent = Intent(context,HqSecondActivity::class.java).apply {
+            val intent = Intent(context, HqSecondActivity::class.java).apply {
                 putExtra("hq_data_key", data1)
                 putExtra("hq_data_key2", data2)
             }
@@ -50,7 +50,7 @@ class HqSecondActivity : HqBaseActivity() {
         binding.tv2.text = intent.getStringExtra(key)
 
         binding.button21.setOnClickListener {
-            val intent = Intent(this,HqThirdActivity::class.java)
+            val intent = Intent(this, HqThirdActivity::class.java)
             startActivity(intent)
 
         }

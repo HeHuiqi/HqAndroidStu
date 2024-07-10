@@ -47,6 +47,8 @@ class HqBroadcastActivityStu : AppCompatActivity() {
             //接收器手动注册或者在AndroidManifest.xml中注册
             val intent = Intent("com.example.hqandroidstu.action.HQ_BROADCAST")
             intent.setPackage(packageName)
+            //设置广播数据
+            intent.putExtra("broadcast_data","resp:custom_broadcast_data")
 //            sendBroadcast(intent)
             //发送有序广播
             sendOrderedBroadcast(intent,null)
@@ -79,6 +81,15 @@ class HqBroadcastActivityStu : AppCompatActivity() {
             registerReceiver(anotherCustomBroadcastReceiver, intentFilter, RECEIVER_NOT_EXPORTED)
         }else {
             registerReceiver(anotherCustomBroadcastReceiver, intentFilter)
+        }
+        anotherCustomBroadcastReceiver.onReceiveBroadcast = { intent ->
+            val data = intent.getStringExtra("broadcast_data")
+            data?.let {
+                Toast.makeText(this,"接收到自定义广播2: $it",Toast.LENGTH_SHORT).show()
+            }
+            if (data == null) {
+                Toast.makeText(this,"接收到自定义广播2",Toast.LENGTH_SHORT).show()
+            }
         }
     }
     private fun registerTimeChangeReceiver(){

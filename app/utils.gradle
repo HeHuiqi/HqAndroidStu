@@ -1,0 +1,5 @@
+tasks.register("hello") {
+    doLast {
+        print("hello custom gralde task1")
+    }
+}

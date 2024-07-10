@@ -10,7 +10,6 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.util.Log
-import android.webkit.JavascriptInterface
 import android.webkit.JsResult
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
@@ -18,10 +17,8 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hqandroidstu.R
-import org.json.JSONObject
 
 
 class HqWebViewActivity : AppCompatActivity() {
@@ -29,15 +26,25 @@ class HqWebViewActivity : AppCompatActivity() {
     private lateinit var webView: WebView
 
     companion object {
-        fun actionStart(context: Context) {
-               val intent = Intent(context, HqWebViewActivity::class.java)
-               context.startActivity(intent)
-        }
+//        fun actionStart(context: Context) {
+//               val intent = Intent(context, HqWebViewActivity::class.java)
+//               context.startActivity(intent)
+//        }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hq_web_view)
         setup()
+    }
+    fun method1() {
+        method2()
+    }
+    fun method2() {
+
+        method3()
+    }
+    fun method3() {
+        Log.i("hq-webview", "method3: ")
     }
     @SuppressLint("SetJavaScriptEnabled")
     private fun setup() {
@@ -49,6 +56,7 @@ class HqWebViewActivity : AppCompatActivity() {
 
         val btn:Button = findViewById(R.id.hqCallJsBtn)
         btn.setOnClickListener {
+            method1()
             // 调用JS中的方法1
 //            webView.loadUrl("javascript:jsHello()")
             //调用JS中的方法2
@@ -58,7 +66,6 @@ class HqWebViewActivity : AppCompatActivity() {
                 override fun onReceiveValue(value: String?) {
                 }
             })
-
 
         }
         webView.webViewClient = object : WebViewClient() {
@@ -100,6 +107,11 @@ class HqWebViewActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    override fun onDestroy() {
+        webView.destroy()
+        super.onDestroy()
     }
 
 

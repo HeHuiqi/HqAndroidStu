@@ -7,9 +7,8 @@ import android.content.ServiceConnection
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.IBinder
-import com.example.hqandroidstu.R
 import com.example.hqandroidstu.databinding.ActivityHqServiceStuBinding
-import com.example.hqandroidstu.hqStartActivity
+import com.example.hqandroidstu.utils.hqStartActivity
 
 class HqServiceStuActivity : AppCompatActivity() {
     companion object {

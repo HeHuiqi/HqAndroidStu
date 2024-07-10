@@ -129,6 +129,7 @@ class HqCameraXActivity : AppCompatActivity() {
                 put(MediaStore.Images.Media.RELATIVE_PATH,"Pictures/CameraX-Image")
             }
         }
+        videoCapture
         // 创建包含文件+元数据的输出选项对象
         val outputOptions = ImageCapture.OutputFileOptions.Builder(contentResolver,
             MediaStore.Images.Media.EXTERNAL_CONTENT_URI,contentValue)

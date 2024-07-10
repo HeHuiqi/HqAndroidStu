@@ -1,7 +1,10 @@
-package com.example.hqandroidstu
+package com.example.hqandroidstu.first
 
 import android.os.Bundle
 import android.widget.Button
+import com.example.hqandroidstu.HqActivityManager
+import com.example.hqandroidstu.HqBaseActivity
+import com.example.hqandroidstu.R
 
 class HqThirdActivity : HqBaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

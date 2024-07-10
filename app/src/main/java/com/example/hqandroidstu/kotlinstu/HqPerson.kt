@@ -1,4 +1,4 @@
-package com.example.hqandroidstu
+package com.example.hqandroidstu.kotlinstu
 
 // 在Kotlin中任何一个非抽象类默认都是不可以被继承的，相当于Java中给类声明了final 关键字
 // 默认所有非抽象类都是不可以被继承的

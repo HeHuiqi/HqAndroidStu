@@ -11,10 +11,9 @@ import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.hqandroidstu.R
 import com.example.hqandroidstu.databinding.ActivityHqDrawerBinding
-import com.example.hqandroidstu.showSnackBar
-import com.example.hqandroidstu.showToast
+import com.example.hqandroidstu.utils.showSnackBar
+import com.example.hqandroidstu.utils.showToast
 import com.example.hqandroidstu.uibase.HqFruit
-import com.google.android.material.snackbar.Snackbar
 import kotlin.concurrent.thread
 
 class HqDrawerActivity : AppCompatActivity() {

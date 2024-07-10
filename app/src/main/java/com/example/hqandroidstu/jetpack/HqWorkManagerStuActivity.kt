@@ -6,12 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.work.BackoffPolicy
 import androidx.work.OneTimeWorkRequest
-import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
-import com.example.hqandroidstu.R
 import com.example.hqandroidstu.databinding.ActivityHqWorkManagerStuBinding
-import com.example.hqandroidstu.showToast
+import com.example.hqandroidstu.utils.showToast
 import java.util.concurrent.TimeUnit
 
 class HqWorkManagerStuActivity : AppCompatActivity() {

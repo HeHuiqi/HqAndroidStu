@@ -15,6 +15,7 @@ import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.example.hqandroidstu.databinding.ActivityHqCameraPhotoBinding
@@ -49,6 +50,8 @@ class HqCameraPhotoActivity : AppCompatActivity() {
            if (ContextCompat.checkSelfPermission(this,android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                openCamera()
            } else {
+               ActivityCompat.requestPermissions(this,
+                  arrayOf(android.Manifest.permission.CAMERA) ,1)
                Toast.makeText(this,"没有相机权限",Toast.LENGTH_SHORT).show()
            }
         }
@@ -135,5 +138,23 @@ class HqCameraPhotoActivity : AppCompatActivity() {
     }
     private fun getBitmapFromUri(uri: Uri) = contentResolver.openFileDescriptor(uri,"r")?.use {
         BitmapFactory.decodeFileDescriptor(it.fileDescriptor)
+    }
+
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        when (requestCode) {
+            1 -> {
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    openCamera()
+                } else {
+                    Toast.makeText(this,"你拒绝了使用相机的权限",Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 }

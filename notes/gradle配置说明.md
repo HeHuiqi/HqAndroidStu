@@ -29,7 +29,7 @@ task clean(type: Delete) {
 ```
 ## app 目录下的build.gradle
 ```js
-   // 声明是Android程序，
+ // 声明是Android程序，
    // com.android.application 表示这是一个应用程序模块,可直接运行
    // com.android.library 标识这是一个库模块，是依附别的应用程序运行
   apply plugin: 'com.android.application
@@ -162,7 +162,7 @@ task clean(type: Delete) {
              zipAlignEnabled true
              shrinkResources true // 移除无用的resource文件
              proguardFiles getDefaultProguardFile('proguard-android.txt')
-                                , 'proguard-rules.pro'
+, 'proguard-rules.pro'
              debuggable true
  //          jniDebuggable true
              ndk {

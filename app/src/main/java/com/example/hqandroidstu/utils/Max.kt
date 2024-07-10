@@ -1,4 +1,4 @@
-package com.example.hqandroidstu
+package com.example.hqandroidstu.utils
 
 //可以比较多个值的max函数
 fun max(vararg nums:Int):Int{

@@ -1,8 +1,8 @@
-package com.example.hqandroidstu
+package com.example.hqandroidstu.kotlinstu
 
 // 继承使用 :
 // 实现接口 HqStudy
-class HqStudent : HqPerson(),HqStudy{
+class HqStudent : HqPerson(), HqStudy {
     var sno = ""
     var grade = 0
 

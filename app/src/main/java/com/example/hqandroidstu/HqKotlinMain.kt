@@ -1,22 +1,12 @@
 package com.example.hqandroidstu
 
-import androidx.lifecycle.ViewModel
-import kotlinx.coroutines.CoroutineScope
+import com.example.hqandroidstu.kotlinstu.HqCellphone
+import com.example.hqandroidstu.kotlinstu.HqPerson
+import com.example.hqandroidstu.kotlinstu.HqSingleton
+import com.example.hqandroidstu.kotlinstu.HqStudent
+import com.example.hqandroidstu.kotlinstu.HqStudy
+import com.example.hqandroidstu.kotlinstu.HqTeacher
 import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.count
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onCompletion
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.flow.onStart
-import kotlinx.coroutines.launch
 import kotlin.reflect.KProperty
 
 /*
@@ -546,6 +536,10 @@ suspend fun main(){
 //    customExtFun()
 //    fanxingStu()
 //    infixStu()
+
+    val ar:ArrayList<String>? = null
+
+    println("ar?.toString()=${ar?.toString()}")
 
 
 }

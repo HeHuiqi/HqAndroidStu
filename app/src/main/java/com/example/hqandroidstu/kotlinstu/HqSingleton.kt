@@ -1,4 +1,4 @@
-package com.example.hqandroidstu
+package com.example.hqandroidstu.kotlinstu
 
 /*
 * 创建一个Kotlin版的Singleton单例类

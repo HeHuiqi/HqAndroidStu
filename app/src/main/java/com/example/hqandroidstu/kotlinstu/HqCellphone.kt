@@ -1,4 +1,4 @@
-package com.example.hqandroidstu
+package com.example.hqandroidstu.kotlinstu
 
 //数据类
 /*

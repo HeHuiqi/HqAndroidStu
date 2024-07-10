@@ -15,10 +15,10 @@ import com.example.hqandroidstu.R
 
 class HqUIBaseActivity : AppCompatActivity(),View.OnClickListener {
     companion object {
-        fun actionStart(context: Context) {
-            val intent = Intent(context,HqUIBaseActivity::class.java)
-            context.startActivity(intent)
-        }
+//        fun actionStart(context: Context) {
+//            val intent = Intent(context,HqUIBaseActivity::class.java)
+//            context.startActivity(intent)
+//        }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,18 +1,17 @@
-package com.example.hqandroidstu
+package com.example.hqandroidstu.first
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
+import com.example.hqandroidstu.HqBaseActivity
+import com.example.hqandroidstu.R
 import com.example.hqandroidstu.databinding.FirstLayoutBinding
 
 class HqFirstActivity : HqBaseActivity() {
@@ -52,20 +51,22 @@ class HqFirstActivity : HqBaseActivity() {
 
         //开启视图绑定后，可以通过视图绑定对象直接获取子视图
         rootBind.button1.setOnClickListener {
-            Toast.makeText(this,"我是一个Toast",Toast.LENGTH_SHORT).show()
 //            pushActivity()
 //            openUrl()
 //            callPhone()
 //            openActivityPassData()
-//            openActivityPassDataForResult()
-            openActivityPassDataUseFun()
+            openActivityPassDataForResult()
+//            openActivityPassDataUseFun()
+        }
+        rootBind.button2.setOnClickListener {
+            openActivityPassDataForResult()
         }
     }
     private fun openActivityPassDataUseFun(){
-        HqSecondActivity.actionStart(this,"Hello1","Hello2")
+        HqSecondActivity.actionStart(this, "Hello1", "Hello2")
     }
     private fun openActivityPassDataForResult(){
-        val intent = Intent(this,HqSecondActivity::class.java)
+        val intent = Intent(this, HqSecondActivity::class.java)
         //传递数据
         val data = "Hello Android"
         val key = "hq_data_key"
@@ -78,7 +79,7 @@ class HqFirstActivity : HqBaseActivity() {
         requestDataLauncher.launch(intent)
     }
     private fun openActivityPassData(){
-        val intent = Intent(this,HqSecondActivity::class.java)
+        val intent = Intent(this, HqSecondActivity::class.java)
         //传递数据
         val data = "Hello Android"
         val key = "hq_data_key"
@@ -100,7 +101,7 @@ class HqFirstActivity : HqBaseActivity() {
     private fun pushActivity() {
         //pop activity
 //            finish()
-            val intent = Intent(this,HqSecondActivity::class.java)
+            val intent = Intent(this, HqSecondActivity::class.java)
             startActivity(intent)
 
         //隐式启动
@@ -136,6 +137,7 @@ class HqFirstActivity : HqBaseActivity() {
         when (requestCode) {
             1 -> {
                 if (resultCode == RESULT_OK) {
+
                     rootBind.tv1.text = data?.getStringExtra("hq_return_data_key")
                 }
             }

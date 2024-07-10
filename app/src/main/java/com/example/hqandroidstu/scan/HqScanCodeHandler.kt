@@ -1,11 +1,5 @@
 package com.example.hqandroidstu.scan
 
-import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.util.Log
-import com.example.hqandroidstu.R
-import com.example.hqandroidstu.showToast
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.barcode.common.Barcode

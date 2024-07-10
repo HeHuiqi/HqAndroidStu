@@ -1,4 +1,4 @@
-package com.example.hqandroidstu
+package com.example.hqandroidstu.utils
 
 import android.content.Context
 import android.content.Intent

@@ -1,6 +1,6 @@
-package com.example.hqandroidstu
+package com.example.hqandroidstu.kotlinstu
 
-class HqTeacher(val className:String):HqPerson(){
+class HqTeacher(val className:String): HqPerson(){
     lateinit var _className:String
     //在这里做构造函数的初始化操作
     init {
