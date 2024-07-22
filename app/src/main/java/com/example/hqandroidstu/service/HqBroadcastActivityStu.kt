@@ -48,7 +48,7 @@ class HqBroadcastActivityStu : AppCompatActivity() {
             val intent = Intent("com.example.hqandroidstu.action.HQ_BROADCAST")
             intent.setPackage(packageName)
             //设置广播数据
-            intent.putExtra("broadcast_data","resp:custom_broadcast_data")
+            intent.putExtra("closeScanPage","resp:custom_broadcast_data")
 //            sendBroadcast(intent)
             //发送有序广播
             sendOrderedBroadcast(intent,null)

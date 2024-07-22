@@ -6,7 +6,7 @@
     </style>
 
     <style name="HqStatusBarTheme" parent="Base.Theme.HqAndroidStu">
-        <!--      设置状态栏的背景为透明的  -->
+        <!--      设置状态栏的背景为主题色  -->
         <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
 

@@ -13,6 +13,7 @@ import android.provider.Settings
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.WindowManager
+import android.view.WindowManager.LayoutParams
 import android.widget.Button
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
@@ -107,18 +108,25 @@ class MainActivity : AppCompatActivity() {
         if (!Settings.canDrawOverlays(c)) {
             val intent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION)
             intent.setData(Uri.parse("package:$packageName"))
-            startActivity(intent)
+            startActivityForResult(intent,1)
             return
         }
         val windowManager = getSystemService(WINDOW_SERVICE) as WindowManager
         val debugView = LayoutInflater.from(c).inflate(R.layout.hq_deubg_view,null)
-        val params = WindowManager.LayoutParams(
-            WindowManager.LayoutParams.WRAP_CONTENT,
-            WindowManager.LayoutParams.WRAP_CONTENT,
-            WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
-            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
-            PixelFormat.TRANSLUCENT
-        )
+//        val params = WindowManager.LayoutParams(
+//            WindowManager.LayoutParams.WRAP_CONTENT,
+//            WindowManager.LayoutParams.WRAP_CONTENT,
+//            WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY,
+//            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+//            PixelFormat.TRANSLUCENT
+//        )
+        val params = LayoutParams().apply {
+            //设置大小 自适应
+            width = LayoutParams.WRAP_CONTENT
+            height = LayoutParams.WRAP_CONTENT
+            flags =
+                LayoutParams.FLAG_NOT_TOUCH_MODAL or LayoutParams.FLAG_NOT_FOCUSABLE
+        }
         windowManager.addView(debugView,params)
     }
     private fun setupData(){

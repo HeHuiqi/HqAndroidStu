@@ -123,7 +123,15 @@ fun base(){
     loop()
 }
 
+class EvcBleKeyPayload(var bleCommand: String = "", var deviceType: String = "",
+                       var boxType: String ="",   var projectVersion: Int = -1) {
+    fun isVKeyPro(): Boolean {
+        return "blekey_pro" == deviceType
+    }
+}
+
 fun oop(){
+    val  ep = EvcBleKeyPayload(projectVersion = 1)
     val person = HqPerson()
     person.name = "Jack"
     person.age = 10

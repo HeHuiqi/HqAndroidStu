@@ -40,6 +40,8 @@ class HqSecondActivity : HqBaseActivity() {
     }
     private fun setup() {
         binding.button2.setOnClickListener {
+
+            //回传数据
             val intent = Intent()
             intent.putExtra("hq_return_data_key","回传数据： Hello Stu")
             setResult(RESULT_OK,intent)
