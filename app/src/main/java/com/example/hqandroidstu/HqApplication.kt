@@ -68,9 +68,8 @@ class HqApplication:Application() {
             override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
                 Log.i("HqApplication", "onActivityCreated: $activity")
                 HqActivityManager.addActivity(activity)
-                delayedRunInMain(3000){
-                    initDebugView(activity)
-                }
+//                delayedRunInMain(3000){
+//                }
                 HqActivityManager.setCurrentActivity(activity)
             }
 

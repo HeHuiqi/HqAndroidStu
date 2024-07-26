@@ -18,6 +18,7 @@ import android.widget.Button
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.example.hqandroidstu.ble.HqBluetoothStuActivity
 import com.example.hqandroidstu.data.HqDBActivity
 import com.example.hqandroidstu.data.HqDataSaveActivity
 import com.example.hqandroidstu.datashare.HqDataShareActivity
@@ -131,6 +132,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun setupData(){
 
+        data.add(HqBluetoothStuActivity())
         data.add(HqFileManageActivity())
         data.add(HqFirstActivity())
         data.add(HqUIBaseActivity())
